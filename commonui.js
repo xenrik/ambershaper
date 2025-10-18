@@ -16,7 +16,7 @@ export const AudioManager = (() => {
     const playing = [];
 
     function play(audio, onEndCallback) {
-        if (!(audio instanceof Audio)) throw new Error("Not an Audio object.");
+        if (!(audio instanceof HTMLAudioElement)) throw new Error("Not an Audio object.");
 
         audio.currentTime = 0;
         audio.muted = muted;
@@ -39,7 +39,7 @@ export const AudioManager = (() => {
     }
 
     function stop(audio) {
-        if (!(audio instanceof Audio)) return;
+        if (!(audio instanceof HTMLAudioElement)) return;
 
         audio.pause();
         audio.currentTime = 0;

@@ -17,6 +17,7 @@ const hitZones = [];
 
 const muteIcon = MuteIcon();
 const music = newAudio("sounds/music/snow.mp3", 0.3);
+
 const bossImage = newImage("images/amber-shaper-title.webp");
 const raiderImage = newImage("images/will-title.webp");
 const bottombg = newImage("images/bg-title.webp");
@@ -428,6 +429,7 @@ function cleanupTitle(){
 
 function enableMusicAutoplayOnUserInput() {
   const unlock = () => {
+    console.log("Playing music: ", music);
     music.loop = "true";
     AudioManager.play(music);
     window.removeEventListener('pointerdown', unlock);
